@@ -3,6 +3,7 @@
 
 ## Description
 This is a simple Notes API built using FastAPI for learning backend development and REST APIs.
+Developed a RESTful Notes API using FastAPI with CRUD operations, Pydantic validation, and Swagger documentation, deployed locally and version-controlled using GitHub.
 
 ## Features
 - Add Notes (Title + Content)
