@@ -1,131 +1,168 @@
+# 📝 Notes CRUD API using FastAPI
 
-# 📝 Notes App – FastAPI Full Stack Project
-
-A beginner-friendly full-stack Notes Web Application built using **FastAPI (Python)** for the backend and **HTML, CSS, JavaScript** for the frontend.
-This application allows users to add, view, and delete notes through a simple web interface and REST API.
-
----
+A simple **CRUD (Create, Read, Update, Delete) API** built using **FastAPI**. This project demonstrates basic API development concepts such as routes, request validation, path parameters, exception handling, and Swagger API testing.
 
 ## 🚀 Features
 
-* ➕ Add new notes
-* 📄 View all notes dynamically
-* ❌ Delete notes
-* 🌐 Interactive frontend UI (HTML + CSS)
-* ⚡ FastAPI backend with REST APIs
-* 📚 Automatic API documentation (Swagger UI)
-* 🔄 Real-time updates using JavaScript Fetch API
+* Create a note
+* Get all notes
+* Get a single note by ID
+* Update an existing note
+* Delete a note
+* Built-in Swagger UI for API testing
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
-### 🔹 Backend
-
-* Python
-* FastAPI
-* Uvicorn (ASGI Server)
-* Pydantic (Data Validation)
-* Jinja2 (Template Rendering)
-
-### 🔹 Frontend
-
-* HTML5
-* CSS3
-* JavaScript (Fetch API)
-
-### 🔹 Tools
-
-* VS Code
-* Git & GitHub
+* **Python**
+* **FastAPI**
+* **Pydantic**
+* **Uvicorn**
 
 ---
 
-## 📁 Project Structure
+## 📂 Project Structure
 
-```
-notes-api/
-│── main.py              # FastAPI backend
-│── templates/
-│   └── index.html       # Frontend UI
-│── static/
-│   └── style.css        # CSS styling
+```text
+project-folder/
+│── main.py
+│── requirements.txt
 │── README.md
 ```
 
 ---
 
-## ⚙️ How the Application Works
+## ⚙️ Installation & Setup
 
-1. User opens the web app in the browser
-2. Frontend sends API requests using JavaScript (Fetch)
-3. FastAPI processes requests (CRUD operations)
-4. Notes are stored in memory (Python list)
-5. Data is returned as JSON and displayed on the UI
+### 1. Clone the repository
+
+```bash
+git clone <your-github-repo-link>
+```
+
+### 2. Move into project folder
+
+```bash
+cd your-project-folder
+```
+
+### 3. Create virtual environment (Optional but Recommended)
+
+#### Windows
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+#### Mac/Linux
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 4. Install dependencies
+
+```bash
+pip install fastapi uvicorn
+```
+
+Or using requirements file:
+
+```bash
+pip install -r requirements.txt
+```
 
 ---
 
-## 🔗 API Endpoints
+## ▶️ Run the Application
 
-| Method | Endpoint           | Description                 |
-| ------ | ------------------ | --------------------------- |
-| GET    | `/`                | Load the frontend interface |
-| GET    | `/notes`           | Retrieve all notes          |
-| POST   | `/notes`           | Add a new note              |
-| DELETE | `/notes/{note_id}` | Delete a note by ID         |
-
----
-
-## ▶️ Installation & Setup (Run Locally)
-
-### 1️⃣ Clone the Repository
-
-```bash
-git clone https://github.com/your-username/notes-api.git
-cd notes-api
-```
-
-### 2️⃣ Install Dependencies
-
-```bash
-pip install fastapi uvicorn jinja2
-```
-
-### 3️⃣ Run the Server
+Run the FastAPI server using:
 
 ```bash
 uvicorn main:app --reload
 ```
 
-### 4️⃣ Open in Browser
+If port `8000` is already in use:
 
-Frontend UI:
-
-```
-http://127.0.0.1:8000/
+```bash
+uvicorn main:app --reload --port 8001
 ```
 
-API Documentation (Swagger):
+---
 
-```
+## 📌 API Endpoints
+
+| Method | Endpoint                 | Description       |
+| ------ | ------------------------ | ----------------- |
+| POST   | `/create-note`           | Create a new note |
+| GET    | `/get-notes`             | Get all notes     |
+| GET    | `/get-note/{note_id}`    | Get note by ID    |
+| PUT    | `/update-note/{note_id}` | Update a note     |
+| DELETE | `/delete-note/{note_id}` | Delete a note     |
+
+---
+
+## 📖 API Documentation (Swagger UI)
+
+FastAPI provides automatic interactive API documentation.
+
+Open in browser:
+
+```text
 http://127.0.0.1:8000/docs
 ```
 
----
+Or if using port `8001`:
 
-## 🧠 Key Concepts Demonstrated
-
-* FastAPI framework fundamentals
-* REST API development (GET, POST, DELETE)
-* Pydantic data modeling & validation
-* Frontend and backend integration
-* Template rendering using Jinja2
-* Static file serving (CSS) in FastAPI
-* JSON request and response handling
-* Basic full-stack project architecture
+```text
+http://127.0.0.1:8001/docs
+```
 
 ---
 
-## 📌 Portfolio Description
+## 📥 Example Request Body
 
-Developed a full-stack Notes Web Application using FastAPI, HTML, CSS, and JavaScript with RESTful APIs, CRUD functionality, template rendering, and frontend-backend integration as a beginner full-stack project.
+### Create / Update Note
+
+```json
+{
+    "title": "Learning FastAPI",
+    "content": "Building CRUD APIs"
+}
+```
+
+---
+
+## 🔍 Example Response
+
+```json
+{
+    "message": "Note created successfully",
+    "note": {
+        "title": "Learning FastAPI",
+        "content": "Building CRUD APIs"
+    }
+}
+```
+
+---
+
+## 🎯 Learning Outcomes
+
+This project helped in understanding:
+
+* FastAPI basics
+* CRUD operations
+* API endpoints
+* Request validation using Pydantic
+* Path parameters
+* Exception handling
+* Swagger documentation
+
+---
+
+
+
