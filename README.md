@@ -1,4 +1,4 @@
-# 📝 Notes CRUD API using FastAPI
+# 📝 Notes CRUD API using FastAPI.
 
 A simple **CRUD (Create, Read, Update, Delete) API** built using **FastAPI**. This project demonstrates basic API development concepts such as routes, request validation, path parameters, exception handling, and Swagger API testing.
 
